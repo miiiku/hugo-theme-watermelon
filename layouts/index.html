@@ -1,0 +1,7 @@
+{{/* homepage */}}
+{{ define "main" }}
+  {{ $mainSections := .Site.Params.mainSections | default (slice "posts") }}
+  {{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
+  {{ $pag := .Paginate ($section) }}
+  {{ partial "grid.html" $pag.Pages }}
+{{ end }}

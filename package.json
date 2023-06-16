@@ -1,0 +1,26 @@
+{
+  "name": "hugo-theme-watermelon",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:tailwind": "tailwindcss -i ./assets/css/_style.css -o ./assets/css/app.css --watch",
+    "dev:hugo": "hugo server -D --themesDir=../.. --source=exampleSite",
+    "dev": "npm run dev:tailwind & npm run dev:hugo",
+    "build": "hugo --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miiiku/hugo-theme-watermelon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miiiku/hugo-theme-watermelon/issues"
+  },
+  "homepage": "https://github.com/miiiku/hugo-theme-watermelon#readme"
+}

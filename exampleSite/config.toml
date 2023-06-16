@@ -1,0 +1,115 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "我在这里"
+theme = "hugo-theme-watermelon"
+paginate = 6
+copyright = "© 2022 <a href=\"/\">Sukoshi</a>."
+hasCJKLanguage = true
+googleAnalytics = "G-GS74WZSLFF"
+    
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# URL格式
+[permalinks]
+  posts = "/:section/:year:month:day:15:04/"
+  docs = "/:section/:year:month:day:15:04/"
+
+# 作者信息
+[author]
+  name = "Sukoshi"
+  email = "guanquanhong@163.com"
+  description = "不觉得鹿角即可爱又有攻击性吗（"
+  avatar = "https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&r=g&d=retro"
+
+# 菜单/导航栏
+[menu]
+  # 顶部导航栏
+  [[menu.main]]
+    identifier = "/"
+    name = "🏠 HOME"
+    title = "HOME"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "/articles"
+    name = "🗂️ ARTICLES"
+    title = "ARTICLES"
+    url = "/articles"
+    weight = 2
+  [[menu.main]]
+    identifier = "/link"
+    name = "🔗 LINK"
+    title = "LINK"
+    url = "/link"
+    weight = 3
+  [[menu.main]]
+    identifier = "/about"
+    name = "👴🏻 ABOUT"
+    title = "ABOUT"
+    url = "/about"
+    weight = 4
+  
+  # 底部社交图标
+  [[menu.social]]
+    identifier = "github"
+    name = "github"
+    url = "https://github.com/miiiku"
+    weight = 1
+  [[menu.social]]
+    identifier = "twitter"
+    name = "twitter"
+    url = "https://twitter.com/guanquanhong"
+    weight = 2
+  [[menu.social]]
+    identifier = "instagram"
+    name = "instagram"
+    url = "https://www.instagram.com/sukoshi_dayo/"
+    weight = 3
+  [[menu.social]]
+    identifier = "weibo"
+    name = "weibo"
+    url = "https://weibo.com/u/5561168966"
+    weight = 4
+  [[menu.social]]
+    identifier = "zhihu"
+    name = "zhihu"
+    url = "https://www.zhihu.com/people/miku-84"
+    weight = 5
+
+# 主题相关配置项
+[params]
+  keywords = ["antler", "个人博客", "不见鹿", "鹿角"]
+  description = "喜欢下雨闻到的泥土味，喜欢下雨带来的丝丝凉意，喜欢窝在被窝听着窗外啪嗒啪嗒的声音，喜欢被雨冲刷以后的这个世界"
+  mainSections = ["posts"]
+
+  # 国内备案号
+  beian = "蜀ICP备15014309号"
+
+  # TOC目录出现字符长度限制
+  toc_show_len = 300
+
+  [params.analytics]
+    baidu = "77cce6624f1114785af5e77d00cbf93c"
+
+  [params.widget]
+    # 相关文章推荐数量
+    articles_count = 6
+    # 分类相关显示数量
+    categories_count = 6
+    # 标签相关显示数量
+    tags_count = 12
+
+  [params.aplayer]
+    theme = "#b7daff"
+    autoplay = false
+    loop = "none"
+    mutex = true
+
+  [params.dplayer]
+    theme = "#b7daff"
+    autoplay = false
+    loop = false
+    mutex = true

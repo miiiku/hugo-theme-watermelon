@@ -1,0 +1,34 @@
+{{/* Regular Pages 简单理解为md文件对应的网页 */}}
+{{ define "main" }}
+    <h1>single.html</h1>
+
+    <div class="posts-container max-w-7xl mx-auto">
+        <div class="text-center text-5xl">
+            <span>🏜️</span>
+        </div>
+        <div class="py-4 mb-8 text-center font-bold text-xl">{{ .Title }}</div>
+
+        <div class="flex gap-8">
+            <div class="flex-shrink-0 w-9/12 p-6 bg-white dark:bg-slate-800 rounded-lg ring-1 ring-slate-900/5 shadow-xl">
+                {{ with (.GetTerms "tags") }}
+                <ul class="flex gap-4 pb-5">
+                    {{ range . }}
+                    <li class="px-3 py-1 text-xs rounded-full border border-slate-300"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+
+                <div class="znc">{{ .Content }}</div>
+            </div>
+            <div class="flex-auto">
+                {{- partial "post-info.html" . -}}
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        {{ range (.GetTerms "categories") }}
+            <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+    </ul>
+{{ end }}
