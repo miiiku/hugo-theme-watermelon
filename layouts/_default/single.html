@@ -1,34 +1,38 @@
 {{/* Regular Pages 简单理解为md文件对应的网页 */}}
 {{ define "main" }}
-    <h1>single.html</h1>
+<div class="hidden">file: single.html | Kind: {{ .Kind }}</div>
 
-    <div class="posts-container max-w-7xl mx-auto">
-        <div class="text-center text-5xl">
-            <span>🏜️</span>
-        </div>
-        <div class="py-4 mb-8 text-center font-bold text-xl">{{ .Title }}</div>
+<div class="posts-container max-w-7xl mx-auto">
+	<div class="text-center text-5xl">
+		<span>🏜️</span>
+	</div>
 
-        <div class="flex gap-8">
-            <div class="flex-shrink-0 w-9/12 p-6 bg-white dark:bg-slate-800 rounded-lg ring-1 ring-slate-900/5 shadow-xl">
-                {{ with (.GetTerms "tags") }}
-                <ul class="flex gap-4 pb-5">
-                    {{ range . }}
-                    <li class="px-3 py-1 text-xs rounded-full border border-slate-300"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
-                    {{ end }}
-                </ul>
-                {{ end }}
+	<div class="py-4 mb-8 text-center font-bold text-xl theme-text">{{ .Title }}</div>
 
-                <div class="znc">{{ .Content }}</div>
-            </div>
-            <div class="flex-auto">
-                {{- partial "post-info.html" . -}}
-            </div>
-        </div>
-    </div>
+	<div class="flex gap-8">
+		<section class="flex-shrink-0 w-9/12 py-6 px-8 theme-content theme-shadow rounded-xl">
+			{{ with (.GetTerms "tags") }}
+			<ul class="flex gap-4 pb-5">
+				{{ range . }}
+				<li>
+					<a class="block px-3 py-1 text-xs theme-subtext theme-text-hover border theme-border theme-border-hover rounded-full" href="{{ .Permalink }}"># {{ .LinkTitle }}</a>
+				</li>
+				{{ end }}
+			</ul>
+			{{ end }}
 
-    <ul>
-        {{ range (.GetTerms "categories") }}
-            <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
-        {{ end }}
-    </ul>
+			<div class="znc theme-text">{{ .Content }}</div>
+		</section>
+		<aside class="flex-auto flex flex-col gap-6 sticky top-6 max-h-[calc(100vh-theme(screens.asidePadding))]">
+			{{- partial "widget-info.html" . -}}
+			{{- partial "widget-toc.html" . -}}
+		</aside>
+	</div>
+</div>
+
+<ul>
+	{{ range (.GetTerms "categories") }}
+	<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+	{{ end }}
+</ul>
 {{ end }}

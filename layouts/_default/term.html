@@ -1,0 +1,12 @@
+{{/* 关于trem 见 https://gohugo.io/content-management/taxonomies/ */}}
+{{ define "main" }}
+	<div class="hidden">file: term.html | Kind: {{ .Kind }} | Term: {{ .Data.Term }}</div>
+	<div class="w-6/12 mx-auto mb-12">
+		<h2 class="font-bold text-3xl theme-text"># {{ or .Title .Data.Term }}</h2>
+		{{ with .Params.description }}
+		<div class="mt-4 theme-subtext">🗯️ {{ . }}</div>
+		{{ end }}
+	</div>
+
+  {{ partial "grid.html" .Pages }}
+{{ end }}

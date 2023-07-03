@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .trans-colors {
+    @apply transition-colors duration-300 ease-in;
+  }
+  .theme-bg {
+    @apply bg-[var(--theme-light-bg)] dark:bg-[var(--theme-dark-bg)] trans-colors;
+  }
+  .theme-content {
+    @apply bg-[var(--theme-light-content)] dark:bg-[var(--theme-dark-content)] trans-colors;
+  }
+  .theme-text {
+    @apply text-[var(--theme-light-text)] dark:text-[var(--theme-dark-text)] trans-colors;
+  }
+  .theme-subtext {
+    @apply text-[var(--theme-light-subtext)] dark:text-[var(--theme-dark-subtext)] trans-colors;
+  }
+  .theme-text-hover {
+    @apply hover:text-[var(--theme-light-text-hover)] dark:hover:text-[var(--theme-dark-text-hover)] trans-colors;
+  }
+  .theme-divide {
+    @apply divide-[var(--theme-light-divide)] dark:divide-[var(--theme-dark-divide)] trans-colors;
+  }
+  .theme-shadow {
+    @apply ring-1 ring-slate-200/5 shadow-xl
+  }
+  .theme-border {
+    @apply border-[var(--theme-light-border)] dark:border-[var(--theme-dark-border)];
+  }
+  .theme-border-hover {
+    @apply hover:border-[var(--theme-light-border-hover)] dark:hover:border-[--theme-dark-border-hover] trans-colors;
+  }
+}

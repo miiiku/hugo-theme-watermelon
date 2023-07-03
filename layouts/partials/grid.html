@@ -1,12 +1,21 @@
 <div class="grid grid-cols-2 gap-8 w-6/12 mx-auto">
   {{ range . }}
   <article class="flex gap-4">
-    <a class="bg-white dark:bg-slate-800 rounded-lg ring-1 ring-slate-900/5 shadow-xl shrink-0 flex items-center justify-center w-24 h-24 text-5xl" href="{{ .Permalink | safeURL }}">
-      <span>🏖️</span>
+    <a class="theme-content rounded-lg ring-1 ring-slate-900/5 shadow-xl shrink-0 flex items-center justify-center w-24 h-24 text-5xl overflow-hidden" href="{{ .Permalink | safeURL }}">
+      {{ if eq .Kind "section" }}
+      <span>🗃️</span>
+      {{ else if .Params.Cover }}
+      <img class="block w-full h-full object-cover" src="{{ .Params.Cover }}" alt="{{ .Title }}" loading="lazy" default-image>
+      {{ else }}
+      <span>📖</span>
+      {{ end }}
     </a>
     <div class="flex-auto">
-      <a class="text-slate-900 dark:text-white text-xl font-bold break-all tracking-tight" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
-      <div class="text-slate-500 dark:text-slate-400 mt-2 text-sm">{{- .Date.Format "January 2, 2006" -}}</div>
+      <a class="theme-text text-xl font-bold break-all tracking-tight" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+      <div class="theme-subtext mt-2 text-sm">{{- .Date.Format "January 2, 2006" -}}</div>
+      {{ if eq .Kind "section" }}
+      <div class="theme-subtext mt-2 text-sm">目录下共有 {{- len .Pages -}} 个帖子</div>
+      {{ end }}
     </div>
   </article>
   {{ end }}

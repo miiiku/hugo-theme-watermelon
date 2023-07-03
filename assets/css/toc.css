@@ -1,0 +1,66 @@
+#TableOfContents > ul {
+  position: relative;
+}
+
+#TableOfContents > ul::before {
+  position: absolute;
+  top: 17px;
+  bottom: 8px;
+  left: 5px;
+  width: 2px;
+  content: "";
+  background: #e0efff;
+  border-radius: 0 0 5px 5px;
+}
+
+#TableOfContents > ul > li {
+  position: relative;
+  padding-left: 21px;
+  margin-top: 5px;
+  font-weight: bolder;
+  list-style: none;
+}
+
+#TableOfContents > ul > li::before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  top: 6px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: #b0d3f9;
+  @apply border-2 border-[var(--theme-light-content)] dark:border-[var(--theme-dark-content)] trans-colors;
+}
+
+#TableOfContents > ul > li a {
+  @apply theme-subtext trans-colors;
+  position: relative;
+  display: -webkit-box;
+  margin: 8px 0;
+  overflow: hidden;
+  font-size: 14px;
+  transition: none;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+#TableOfContents > ul > li ul {
+  position: relative;
+}
+
+#TableOfContents > ul > li ul li {
+  font-weight: 400;
+}
+
+#TableOfContents > ul > li ul li::before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  top: 7px;
+  left: -20px;
+  width: 10px;
+  height: 10px;
+  background: #d9eafb;
+  @apply border-2 border-[var(--theme-light-content)] dark:border-[var(--theme-dark-content)] trans-colors;
+}

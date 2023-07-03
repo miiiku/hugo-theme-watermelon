@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body class="bg-slate-50 dark:bg-slate-900">
-        <h1>basesof.html</h1>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+<html lang="{{ $.Site.LanguageCode }}">
+
+	{{- partial "head.html" . -}}
+
+	<body class="theme-bg">
+		<h1 class="hidden">basesof.html</h1>
+		{{- partial "header.html" . -}}
+		<div id="content">
+			{{- block "main" . }}{{- end }}
+		</div>
+		{{- partial "footer.html" . -}}
+
+    {{- partial "footer-script" . -}}
+	</body>
+
 </html>

@@ -8,10 +8,10 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:tailwind": "tailwindcss -i ./assets/css/_style.css -o ./assets/css/app.css --watch",
-    "dev:hugo": "hugo server -D --themesDir=../.. --source=exampleSite",
+    "dev:tailwind": "tailwindcss -i ./assets/css/style.css -o ./assets/css/app.css --watch",
+    "dev:hugo": "hugo server -D --themesDir=../.. --watch --source=exampleSite",
     "dev": "npm run dev:tailwind & npm run dev:hugo",
-    "build": "hugo --minify"
+    "build": "hugo --themesDir=../.. --source=exampleSite --minify"
   },
   "repository": {
     "type": "git",

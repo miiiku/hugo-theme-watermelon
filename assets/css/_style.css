@@ -1,8 +1,0 @@
-@import url(./_theme.css);
-@import url(./_var.css);
-@import url(./_markdown.css);
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-

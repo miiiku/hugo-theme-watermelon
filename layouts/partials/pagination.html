@@ -1,64 +1,28 @@
 {{ $pag := $.Paginator }}
-{{ if gt $pag.TotalPages 1 -}}
-  <div>
+{{ if gt $pag.TotalPages 1 }}
+<div>
+  <nav class="flex mt-20 justify-center gap-8">
+    {{/* Prev Page */}}
+    {{ with $pag.Prev }}
+    <a class="flex gap-1 items-center px-4 py-2 text-base theme-subtext rounded-md hover:bg-slate-200 dark:hover:bg-slate-700" href="{{ .URL | safeURL }}" aria-label="Prev">
+      <svg width="24" height="24" viewBox="0 0 48 48" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 23.9917H36" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24 36L12 24L24 12" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>跳到第{{ sub $pag.PageNumber 1 }}页</span>
+    </a>
+    {{ end }}
 
-    {{ $pagFirst  := $pag.First }}
-    {{ $pagLast   := $pag.Last }}
-    {{ $isFirst   := eq $pagFirst.PageNumber $pag.PageNumber }}
-    {{ $isLast    := eq $pagLast.PageNumber $pag.PageNumber }}
-
-    <ul class="flex py-8 justify-center gap-8">
-      {{/* prev page */}}
-      <li class="page-item">
-        {{ if $pag.HasPrev }}
-          <a href="{{ $pag.Prev.URL }}" class="page-link" aria-label="First">⬅️</a>
-        {{ else }}
-          <span>⬅️</span>
-        {{ end }}
-      </li>
-
-      {{/* first page */}}
-      {{ with $pagFirst -}} 
-      <li class="page-item">
-        {{ if $isFirst }}
-          <span>{{ .PageNumber }}</span>
-        {{ else }}
-          <a href="{{ .URL }}" class="page-link" aria-label="First">{{ .PageNumber }}</a>
-        {{ end }}
-      </li>
-      {{ end -}}
-
-      {{ if (and (ge $pag.PageNumber 3) (not $isFirst)) }}
-        <li class="page-item"><span>…</span></li>
-      {{ end }}
-
-      {{ if (and (not $isFirst) (not $isLast)) }}
-        <li class="page-item"><span>{{ $pag.PageNumber }}</span></li>
-      {{ end }}
-
-      {{ if (and (le $pag.PageNumber (sub $pag.TotalPages 2)) (not $isLast)) }}
-        <li class="page-item"><span>…</span></li>
-      {{ end }}
-
-      {{/* last page */}}
-      {{- with $pag.Last }}
-      <li class="page-item">
-        {{ if $isLast }}
-          <span>{{ .PageNumber }}</span>
-        {{ else }}
-          <a href="{{ .URL }}" class="page-link" aria-label="Last">{{ .PageNumber }}</a>
-        {{ end }}
-      </li>
-      {{- end }}
-
-      {{/* next page */}}
-      <li class="page-item">
-        {{ if $pag.HasNext }}
-          <a href="{{ $pag.Next.URL }}" class="page-link" aria-label="First">➡️</a>
-        {{ else }}
-          <span>➡️</span>
-        {{ end }}
-      </li>
-    </ul>
-  </div>
+    {{/* Next Page */}}
+    {{ with $pag.Next }}
+    <a class="flex gap-1 items-center px-4 py-1 text-base theme-content theme-text rounded-md border border-[#5c93bb2b] shadow-[0_3px_4px_-2px_#21253840]" href="{{ .URL | safeURL }}" aria-label="Next">
+      <span>下一页</span>
+      <svg width="24" height="24" viewBox="0 0 48 48" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M36 24.0083H12" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24 12L36 24L24 36" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    {{ end }}
+  </nav>
+</div>
 {{ end }}

@@ -1,0 +1,12 @@
+{{ $class   := .Attributes.class | default ""    }}
+{{ $lang    := .Attributes.lang  | default .Type }}
+
+<div class="code-block {{ $class }}">
+  <span class="lang">{{ $lang }}</span>
+  <button title="Copy Code" class="copy"></button>
+  {{ if transform.CanHighlight $lang }}
+  {{ highlight .Inner $lang }}
+  {{else}}
+  {{ .Inner }}
+  {{end}}
+</div>

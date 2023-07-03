@@ -2,13 +2,13 @@
   <div class="w-1280 max-w-screen-xl flex justify-between items-end mx-auto">
     <div class="flex-auto">
       <div class="text-3xl font-bold">
-        <a href="{{ .Site.BaseURL | safeURL }}">{{ .Site.Title }}</a>
+        <a class="theme-text" href="{{ .Site.BaseURL | safeURL }}">{{ .Site.Title }}</a>
       </div>
-      <div class="text-sm text-slate-400 mt-4">如果你能像我一样，那真是泰裤辣 👍</div>
+      <div class="text-sm mt-4 theme-subtext">如果你能像我一样，那真是泰裤辣 👍</div>
     </div>
     <div class="shrink-0">
       {{ range .Site.Menus.main }}
-      <a class="px-3 py-2 text-slate-900 dark:text-white font-bold rounded-lg hover:bg-slate-100 hover:text-slate-900" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
+      <a class="px-3 py-2 font-bold rounded-lg theme-text hover:bg-slate-200 dark:hover:bg-slate-600" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
       {{ end }}
     </div>
   </div>

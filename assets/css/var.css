@@ -1,0 +1,21 @@
+:root {
+  --themes-shadow: rgb(226 232 240 / 0.05);
+
+  --theme-light-bg: #f8fafc;
+  --theme-light-content: #ffffff;
+  --theme-light-text: #0f172a;
+  --theme-light-subtext: #64748b;
+  --theme-light-text-hover: #0ea5e9;
+  --theme-light-divide: #e2e8f0;
+  --theme-light-border: #cbd5e1;
+  --theme-light-border-hover: #0ea5e9;
+
+  --theme-dark-bg: #0f172a;
+  --theme-dark-content: #1e293b;
+  --theme-dark-text: #ffffff;
+  --theme-dark-subtext: #94a3b8;
+  --theme-dark-text-hover: #bae6fd;
+  --theme-dark-divide: #334155;
+  --theme-dark-border: #475569;
+  --theme-dark-border-hover: #bae6fd;
+}

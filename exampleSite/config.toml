@@ -6,11 +6,18 @@ paginate = 6
 copyright = "© 2022 <a href=\"/\">Sukoshi</a>."
 hasCJKLanguage = true
 googleAnalytics = "G-GS74WZSLFF"
+
+enableEmoji = true
     
 [markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    style = "base16-snazzy"
 
 # URL格式
 [permalinks]
@@ -34,23 +41,23 @@ googleAnalytics = "G-GS74WZSLFF"
     url = "/"
     weight = 1
   [[menu.main]]
-    identifier = "/articles"
-    name = "🗂️ ARTICLES"
-    title = "ARTICLES"
-    url = "/articles"
+    identifier = "/posts"
+    name = "🗂️ POSTS"
+    title = "POSTS"
+    url = "/posts"
     weight = 2
   [[menu.main]]
     identifier = "/link"
     name = "🔗 LINK"
     title = "LINK"
     url = "/link"
-    weight = 3
+    weight = 4
   [[menu.main]]
     identifier = "/about"
     name = "👴🏻 ABOUT"
     title = "ABOUT"
     url = "/about"
-    weight = 4
+    weight = 5
   
   # 底部社交图标
   [[menu.social]]

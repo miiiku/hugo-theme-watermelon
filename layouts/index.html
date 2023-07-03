@@ -1,7 +1,10 @@
 {{/* homepage */}}
 {{ define "main" }}
-  {{ $mainSections := .Site.Params.mainSections | default (slice "posts") }}
-  {{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
-  {{ $pag := .Paginate ($section) }}
-  {{ partial "grid.html" $pag.Pages }}
+<div class="hidden">file: term.html | Kind: {{ .Kind }}</div>  
+  <div class="w-6/12 mx-auto">
+    {{ with $.Site.GetPage "index" }}
+      <h2 class="font-bold text-3xl theme-text mb-10">{{ .Title }}</h2>
+      <div class="znc theme-text">{{ .Content | safeHTML }}</div>
+    {{ end }}
+  </div>
 {{ end }}

@@ -1,12 +1,35 @@
-<!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        <h1>section.html</h1>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
-</html>
+{{/* Sections Page 简单理解为每个章节(目录)下的文章列表 */}}
+{{/* 如果目录下有index.md文件，则会忽略其他文件，把index.md当成一个Regular Pages来处理 */}}
+{{/* 如果目录下没有index.md文件，则会把这个目录当作是一个Section来处理 */}}
+{{/* 如果目录下同时存在index.md和_index.md文件 在.Site.Sections中会存在当前目录，但是点击以后会把index.md当成Regular Pages处理 */}}
+
+{{/* 子目录下，如果子目录有_index.md 则会把子目录也当作一个Section来处理 如果里面有index.md 会当作一个Regular Pages 来处理 */}}
+{{/* 子目录下，如果子目录没有_index.md 但是有index.md 则会忽略子目录下的所有其他md文件，只把index.md当作一个Regular Pages来处理 */}}
+{{/* 子目录下，如果_index.md和index.md都不存在，则会把子目录下的所有md作为Regular Pages来处理，但是不会有新的Section */}}
+{{ define "main" }}
+	<div class="hidden">file: section.html | Kind: {{ .Kind }} | Section: {{ .Type }}</div>
+	
+	<div class="w-6/12 mx-auto mb-12 flex flex-wrap gap-6">
+	{{ $currentType := .Type }}
+	{{ range .Site.Sections }}
+		{{ if eq $currentType .Type }}
+		<a class="text-3xl font-bold theme-text" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+		{{ else }}
+		<a class="text-3xl font-normal theme-subtext opacity-30 hover:opacity-60" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+		{{ end }}
+	{{ end }}
+	</div>
+
+	<div class="w-6/12 mx-auto mb-12 theme-subtext">{{ .Description }}</div>
+
+	{{/* 测试代码 Start */}}
+  {{ $section := where .Site.RegularPages "Section" .Type }}
+	<div class="hidden">{{ $section }} | where .Site.RegularPages "Section" .Type</div>
+	<div class="hidden">{{ .Data.Pages }} | .Data.Pages</div>
+	<div class="hidden">{{ .Pages }} | .Pages</div>
+	{{/* 测试代码 End */}}
+	
+	{{ $pag := .Paginate (.Data.Pages) }}
+  {{ partial "grid.html" $pag.Pages }}
+	{{ partial "pagination.html" . }}
+{{ end }}

@@ -1,10 +1,10 @@
 {{ if .Title }}
-<figure class="mb-4">
-  <img class="block max-w-full" src="{{ .Destination | safeURL }}" title="{{ .Title }}" alt="{{ .PlainText | safeHTML }}" loading="lazy" />
-  <figcaption class="text-center mt-3 text-sm text-slate-600">{{ .Title }}</figcaption>
+<figure class="figure-image">
+  <img class="figure-image--img" src="{{ .Destination | safeURL }}" title="{{ .Title }}" alt="{{ .PlainText | safeHTML }}" loading="lazy" />
+  <figcaption class="figure-image--title">{{ .Title }}</figcaption>
 </figure>
 {{ else }}
-<div>
-  <img class="block max-w-full" src="{{ .Destination | safeURL }}" alt="{{ .PlainText | safeHTML }}" loading="lazy" />
-</div>
+<figure class="figure-image">
+  <img class="figure-image--img" src="{{ .Destination | safeURL }}" alt="{{ .PlainText | safeHTML }}" loading="lazy" />
+</figure>
 {{ end }}

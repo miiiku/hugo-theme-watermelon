@@ -23,6 +23,17 @@ cover:
 `ReactElement`はReactのコンポーネント(のインスタンス)を表現する最も基本的な型です。
 具体的な型の定義は以下のようになっており、keyやpropsなどのプロパティを持ちます。
 
+```diff
+public class Hello1
+{
+   public static void Main()
+   {
+-      System.Console.WriteLine("Hello, World!");
++      System.Console.WriteLine("Rock all night long!");
+   }
+}
+```
+
 ```ts
 interface ReactElement<
 	P = any, T extends string
