@@ -13,6 +13,14 @@
   border-radius: 0 0 5px 5px;
 }
 
+#TableOfContents > ul > li.active::before {
+  background-color: #3ea8ff;
+}
+
+#TableOfContents > ul > li.active > a {
+  @apply theme-text;
+}
+
 #TableOfContents > ul > li {
   position: relative;
   padding-left: 21px;
@@ -29,7 +37,7 @@
   left: 0;
   width: 12px;
   height: 12px;
-  background: #b0d3f9;
+  background-color: #b0d3f9;
   @apply border-2 border-[var(--theme-light-content)] dark:border-[var(--theme-dark-content)] trans-colors;
 }
 
@@ -49,7 +57,20 @@
   position: relative;
 }
 
+#TableOfContents > ul > li ul li.active::before {
+  top: 6px;
+  left: -21px;
+  width: 12px;
+  height: 12px;
+  background-color: #3ea8ff;
+}
+
+#TableOfContents > ul > li ul li.active > a {
+  @apply theme-text;
+}
+
 #TableOfContents > ul > li ul li {
+  position: relative;
   font-weight: 400;
 }
 
@@ -61,6 +82,6 @@
   left: -20px;
   width: 10px;
   height: 10px;
-  background: #d9eafb;
+  background-color: #d9eafb;
   @apply border-2 border-[var(--theme-light-content)] dark:border-[var(--theme-dark-content)] trans-colors;
 }

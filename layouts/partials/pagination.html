@@ -5,10 +5,7 @@
     {{/* Prev Page */}}
     {{ with $pag.Prev }}
     <a class="flex gap-1 items-center px-4 py-2 text-base theme-subtext rounded-md hover:bg-slate-200 dark:hover:bg-slate-700" href="{{ .URL | safeURL }}" aria-label="Prev">
-      <svg width="24" height="24" viewBox="0 0 48 48" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 23.9917H36" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24 36L12 24L24 12" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      {{ partial "svgs/page-prev.svg" (dict "width" "24px" "height" "24px") }}
       <span>跳到第{{ sub $pag.PageNumber 1 }}页</span>
     </a>
     {{ end }}
@@ -17,10 +14,7 @@
     {{ with $pag.Next }}
     <a class="flex gap-1 items-center px-4 py-1 text-base theme-content theme-text rounded-md border border-[#5c93bb2b] shadow-[0_3px_4px_-2px_#21253840]" href="{{ .URL | safeURL }}" aria-label="Next">
       <span>下一页</span>
-      <svg width="24" height="24" viewBox="0 0 48 48" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M36 24.0083H12" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24 12L36 24L24 36" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      {{ partial "svgs/page-next.svg" (dict "width" "24px" "height" "24px") }}
     </a>
     {{ end }}
   </nav>

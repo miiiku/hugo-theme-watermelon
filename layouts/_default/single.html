@@ -3,8 +3,14 @@
 <div class="hidden">file: single.html | Kind: {{ .Kind }}</div>
 
 <div class="posts-container max-w-7xl mx-auto">
-	<div class="text-center text-5xl">
-		<span>🏜️</span>
+	<div class="flex justify-center items-center">
+		<div class="w-24 h-24">
+			{{ if .Params.Cover }}
+			<img class="block w-full h-full object-cover rounded-lg ring-1 ring-slate-900/5 shadow-xl" src="{{ .Params.Cover }}" alt="{{ .Title }}" loading="lazy" default-image>
+			{{ else }}
+			{{ partial "svgs/book.svg" (dict "width" "100%" "height" "100%") }}
+			{{ end }}
+		</div>
 	</div>
 
 	<div class="py-4 mb-8 text-center font-bold text-xl theme-text">{{ .Title }}</div>

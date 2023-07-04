@@ -95,19 +95,8 @@ enableEmoji = true
   # 国内备案号
   beian = "蜀ICP备15014309号"
 
-  # TOC目录出现字符长度限制
-  toc_show_len = 300
-
   [params.analytics]
     baidu = "77cce6624f1114785af5e77d00cbf93c"
-
-  [params.widget]
-    # 相关文章推荐数量
-    articles_count = 6
-    # 分类相关显示数量
-    categories_count = 6
-    # 标签相关显示数量
-    tags_count = 12
 
   [params.aplayer]
     theme = "#b7daff"

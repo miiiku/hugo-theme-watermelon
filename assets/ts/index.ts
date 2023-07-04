@@ -25,6 +25,8 @@ const themeDark = window.matchMedia("(prefers-color-scheme: dark)");
     /** [default-image] onload event */
     bindPictureError();
 
+    bindTocScroll(".znc", "#TableOfContents", 2, 4);
+
     /** theme change click */
     const themeLightBtn = document.querySelector('#theme-light');
     const themeDarkBtn  = document.querySelector('#theme-dark');
@@ -45,6 +47,72 @@ const themeDark = window.matchMedia("(prefers-color-scheme: dark)");
 
   switchTheme();
 })();
+
+function bindTocScroll (container: string, toc: string, startLevel = 2, endLevel = 4) {
+  if (!container) {
+    return console.warn("请传入正确的'container'");
+  }
+
+  if (!toc) {
+    return console.warn("请传入正确的'toc'");
+  }
+
+  let headings = "";
+
+  for (let i = startLevel; i<= endLevel; i++) {
+    headings += `h${i}`;
+    if (i < endLevel) {
+      headings += ",";
+    }
+  }
+
+  const headingElementList = querySelectorArrs<HTMLElement>(`${container} ${headings}`);
+
+  const linkElementList = querySelectorArrs<HTMLLinkElement>(`${toc} a[href^='#']`);
+
+
+  if (!headingElementList || !headingElementList.length) {
+    return console.info("没有获取到任何锚点");
+  }
+
+  if (!linkElementList || !linkElementList.length) {
+    return console.info("没有获取到任何锚点");
+  }
+
+  const updateActive = (index: number) => {
+    linkElementList.forEach((el, i) => {
+      const p = el.parentElement;
+      if (!p) return;
+      if (i === index) {
+        p.classList.add("active");
+      } else {
+        p.classList.remove("active");
+      }
+    });
+  }
+
+  const headingObserver = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(({ target, isIntersecting, boundingClientRect }) => {
+      if (boundingClientRect.top > 20) {
+        return console.log("不做处理");
+      }
+      const index = Number((target as HTMLElement).dataset?.toc) || 0;
+      if (!isIntersecting) {
+        updateActive(index);
+      }
+      if (isIntersecting && index > 0) {
+        updateActive(index-1);
+      }
+    })
+  }, { rootMargin: "-10px 0px 0px 0px", threshold: [1] });
+
+  updateActive(0);
+
+  headingElementList.forEach((el, index) => {
+    el.dataset.toc = String(index);
+    headingObserver.observe(el);
+  });
+}
 
 function bindPictureError () {
   const imgs = querySelectorArrs<HTMLImageElement>("img[default-image]");
