@@ -1,9 +1,13 @@
 .znc {
-  line-height: 1.9
+  line-height: 1.9;
 }
 
 .znc > :first-child {
-  margin-top: 0
+  margin-top: 0;
+}
+
+.znc > :last-child {
+  margin-bottom: 0;
 }
 
 /* markdown list start */

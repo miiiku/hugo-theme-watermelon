@@ -4,13 +4,13 @@
 	{{- partial "head.html" . -}}
 
 	<body class="theme-bg">
-		<h1 class="hidden">basesof.html</h1>
 		{{- partial "header.html" . -}}
+
 		<div id="content">
 			{{- block "main" . }}{{- end }}
 		</div>
-		{{- partial "footer.html" . -}}
 
+		{{- partial "footer.html" . -}}
     {{- partial "footer-script" . -}}
 	</body>
 

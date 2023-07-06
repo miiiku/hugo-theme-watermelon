@@ -1,0 +1,3 @@
+- { "name" : "魔兽世界首发职业模拟器", "link" : "https://github.com/miiiku/wow-classes-first", "description" : "选择备选职业进行模拟roll点" }
+- { "name" : "Screenshot", "link" : "https://github.com/miiiku/screenshot", "description" : "平时看番/看剧的一些截图放在这个网页中，主要是做了一个顶部滚动的导航栏" }
+- { "name" : "Music Radio", "link" : "https://github.com/miiiku/music-radio", "description" : "使用Web Audio API开发的一个在线可视化音乐电台，项目用来熟悉Web Audio那块的东西和Canvas画图那块的API" }

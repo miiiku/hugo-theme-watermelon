@@ -2,13 +2,16 @@
 title: ともだち
 description: 嘿，靓仔
 date: 2019-03-05 14:12:17
+notoc: true
 cover: https://qiniu.sukoshi.xyz/src/images/banner-3.jpg-compress
-layout: link
+tags: ["html", "markdown"]
+layout: listlayout
+dataSource: "link"
 ---
 
-### 可爱又迷人的小伙伴们
+**可爱又迷人的小伙伴们**
 
-### 不来跟我交易一波吗
+**不来跟我交易一波吗**
 
 需要交换友链的小伙伴们可以在 **[ [blog-links](https://github.com/miiiku/blog-links) ]** Fork当前项目编辑`links.yml`在文件底部添加你的站点信息并推送(push)，然后建立一个新的合并申请（pull request）并描述改动。
 

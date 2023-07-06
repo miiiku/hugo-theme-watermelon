@@ -669,6 +669,10 @@ video {
   top: 1.5rem;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -677,6 +681,11 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .mb-10 {
@@ -711,12 +720,20 @@ video {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
 }
 
 .hidden {
   display: none;
+}
+
+.h-16 {
+  height: 4rem;
 }
 
 .h-24 {
@@ -731,16 +748,12 @@ video {
   height: 100%;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-12 {
-  height: 3rem;
-}
-
 .max-h-\[calc\(100vh-theme\(screens\.asidePadding\)\)\] {
   max-height: calc(100vh - 48px);
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .w-24 {
@@ -761,14 +774,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-12 {
-  width: 3rem;
 }
 
 .max-w-7xl {
@@ -898,6 +903,14 @@ video {
      object-fit: cover;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -955,6 +968,10 @@ video {
   padding-top: 5rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1005,11 +1022,6 @@ video {
   letter-spacing: -0.025em;
 }
 
-.text-cyan-500 {
-  --tw-text-opacity: 1;
-  color: rgb(6 182 212 / var(--tw-text-opacity));
-}
-
 .opacity-30 {
   opacity: 0.3;
 }
@@ -1034,11 +1046,6 @@ video {
 
 .ring-slate-900\/5 {
   --tw-ring-color: rgb(15 23 42 / 0.05);
-}
-
-.drop-shadow {
-  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 #TableOfContents > ul {
@@ -1177,11 +1184,15 @@ video {
 }
 
 .znc {
-  line-height: 1.9
+  line-height: 1.9;
 }
 
 .znc > :first-child {
-  margin-top: 0
+  margin-top: 0;
+}
+
+.znc > :last-child {
+  margin-bottom: 0;
 }
 
 /* markdown list start */

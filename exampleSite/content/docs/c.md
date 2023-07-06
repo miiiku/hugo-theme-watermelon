@@ -4,7 +4,6 @@ date: 2021-06-09T11:32:04+08:00
 categories: ['doc']
 tags: ['config']
 description: "config.toml在kagome中的配置项"
-toc: true
 ---
 
 config配置文件中配置可参考Hugo官方文档: [Configure Hugo](https://gohugo.io/getting-started/configuration/)

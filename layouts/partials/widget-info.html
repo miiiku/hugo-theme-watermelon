@@ -64,8 +64,8 @@
         <span>章节</span>
       </dt>
       <dd class="theme-text">
-        <span class="hidden"> 文章Type: {{ .Type }} | {{ .Section }}</span>
-        <span class="hidden"> 文章Section: {{ .Type }} | {{ .Section }}</span>
+        <span class="hidden"> 文章Type: {{ .Type }}</span>
+        <span class="hidden"> 文章Section: {{ .Section }}</span>
         <span>
           {{ with $.Site.GetPage .Type }}
             {{ .Title }}

@@ -1,6 +1,7 @@
 {{/* Regular Pages 简单理解为md文件对应的网页 */}}
 {{ define "main" }}
-<div class="hidden">file: single.html | Kind: {{ .Kind }}</div>
+
+{{ partial "printinfo.html" (dict "Html" "single.html" "Page" .) }}
 
 <div class="posts-container max-w-7xl mx-auto">
 	<div class="flex justify-center items-center">
@@ -17,7 +18,9 @@
 
 	<div class="flex gap-8">
 		<section class="flex-shrink-0 w-9/12 py-6 px-8 theme-content theme-shadow rounded-xl">
-			{{ with (.GetTerms "tags") }}
+      {{/* 判断是文章页还是其他页面 有Section则是文章页面 否则为其他页面(如添加的关于页面) */}}
+      {{ if .Page.Section }}
+      {{ with (.GetTerms "tags") }}
 			<ul class="flex gap-4 pb-5">
 				{{ range . }}
 				<li>
@@ -26,12 +29,15 @@
 				{{ end }}
 			</ul>
 			{{ end }}
+      {{ end }}
 
 			<div class="znc theme-text">{{ .Content }}</div>
 		</section>
 		<aside class="flex-auto flex flex-col gap-6 sticky top-6 max-h-[calc(100vh-theme(screens.asidePadding))]">
 			{{- partial "widget-info.html" . -}}
+      {{ if not .Params.notoc }}
 			{{- partial "widget-toc.html" . -}}
+      {{ end }}
 		</aside>
 	</div>
 </div>

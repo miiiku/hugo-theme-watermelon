@@ -1,9 +1,12 @@
 ---
 title: "插入Details"
 date: 2023-06-20T18:30:55+08:00
+notoc: true
 categories: 
 tags: ["html", "markdown"]
 cover: "https://qiniu.sukoshi.xyz/attach/2021/06/04/%E6%95%88%E6%9E%9C%E5%9B%BE.jpg"
+layout: listlayout
+dataSource: "project"
 ---
 
 使用`details`和`summary`标签，并实现它们的样式。

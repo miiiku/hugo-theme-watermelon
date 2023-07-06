@@ -53,10 +53,9 @@ enableEmoji = true
     url = "/link"
     weight = 4
   [[menu.main]]
-    identifier = "/about"
-    name = "👴🏻 ABOUT"
-    title = "ABOUT"
-    url = "/about"
+    identifier = "/project"
+    name = "📽️ PROJECT"
+    url = "/project"
     weight = 5
   
   # 底部社交图标

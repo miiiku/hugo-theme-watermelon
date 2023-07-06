@@ -1,0 +1,12 @@
+{{/* 模版的查找顺序 https://gohugo.io/templates/lookup-order/#hugo-layouts-lookup-rules */}}
+
+{{ printf "<!-- File    : %s -->" .Html | safeHTML }}
+{{ "<!-- 模版查找顺序受下面属性影响 -->" | safeHTML }}
+{{ printf "<!-- Kind    : %s -->" .Page.Kind | safeHTML }}
+{{ printf "<!-- Layout  : %s -->" .Page.Layout | safeHTML }}
+{{ printf "<!-- Type    : %s -->" .Page.Type | safeHTML }}
+{{ printf "<!-- Section : %s -->" .Page.Section | safeHTML }}
+
+{{ if .Term }}
+{{ printf "<!-- Term    : %s -->" .Page.Data.Term | safeHTML }}
+{{ end }}

@@ -6,7 +6,6 @@ tags: ['toc', 'math', 'image']
 description: "测试hugo主题kagome中插入公式，插入图片和TOC目录显示"
 keywords: ['unit test', 'hugo']
 math: true
-toc: true
 ---
 
 ## 公式显示
