@@ -36,25 +36,25 @@ enableEmoji = true
   # 顶部导航栏
   [[menu.main]]
     identifier = "/"
-    name = "🏠 HOME"
+    name = "首页"
     title = "HOME"
     url = "/"
     weight = 1
   [[menu.main]]
     identifier = "/posts"
-    name = "🗂️ POSTS"
+    name = "帖子"
     title = "POSTS"
     url = "/posts"
     weight = 2
   [[menu.main]]
     identifier = "/link"
-    name = "🔗 LINK"
+    name = "友链"
     title = "LINK"
     url = "/link"
     weight = 4
   [[menu.main]]
     identifier = "/project"
-    name = "📽️ PROJECT"
+    name = "项目"
     url = "/project"
     weight = 5
   

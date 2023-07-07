@@ -4,7 +4,7 @@
 
 {{ partial "printinfo.html" (dict "Html" "_default/listlayout.html" "Page" .) }}
 
-<div class="posts-container max-w-7xl mx-auto">
+<div class="posts-container layout-content">
 	<div class="flex justify-center items-center">
 		<div class="w-24 h-24">
 			{{ if .Params.Cover }}
@@ -17,8 +17,8 @@
 
 	<div class="py-4 mb-8 text-center font-bold text-xl theme-text">{{ .Title }}</div>
 
-	<div class="flex gap-8">
-		<section class="flex-shrink-0 w-9/12 py-6 px-8 theme-content theme-shadow rounded-xl">
+	<div class="flex gap-6">
+		<section class="flex-shrink-0 w-full lg:w-9/12 py-6 px-8 theme-content theme-shadow rounded-xl">
       {{/* 判断是文章页还是其他页面 有Section则是文章页面 否则为其他页面(如添加的关于页面) */}}
       {{ if .Page.Section }}
       {{ with (.GetTerms "tags") }}
@@ -70,7 +70,7 @@
 			</table>
 			{{ end }}
 		</section>
-		<aside class="flex-auto flex flex-col gap-6 sticky top-6 max-h-[calc(100vh-theme(screens.asidePadding))]">
+		<aside class="hidden lg:flex flex-auto flex-col gap-6 sticky top-6 max-h-[calc(100vh-theme(screens.asidePadding))]">
 			{{- partial "widget-info.html" . -}}
       {{ if not .Params.notoc }}
 			{{- partial "widget-toc.html" . -}}

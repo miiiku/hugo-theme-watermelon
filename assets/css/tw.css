@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  .layout-wrap {
+    @apply py-6 lg:py-10 2xl:py-12;
+  }
+  .layout-content {
+    @apply w-full lg:w-11/12 xl:w-10/12 2xl:w-8/12 mx-auto px-4;
+  }
   .trans-colors {
     @apply transition-colors duration-300 ease-in;
   }

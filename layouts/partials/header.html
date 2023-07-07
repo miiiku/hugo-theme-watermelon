@@ -1,14 +1,16 @@
-<header class="header-container py-20">
-  <div class="w-1280 max-w-screen-xl flex justify-between items-end mx-auto">
+<header id="header-container" class="layout-wrap">
+  <div class="layout-content flex justify-between items-center">
     <div class="shrink-0">
       <a class="theme-text" href="{{ .Site.BaseURL | safeURL }}">
         {{ partial "svgs/logo.svg" (dict "width" "68px" "height" "68px") }}
       </a>
     </div>
     <div class="shrink-0">
-      {{ range .Site.Menus.main }}
-      <a class="px-3 py-2 font-bold rounded-lg theme-text hover:bg-slate-200 dark:hover:bg-slate-600" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
-      {{ end }}
+      <nav class="block">
+        {{ range .Site.Menus.main }}
+        <a class="px-3 py-2 font-bold rounded-lg theme-text hover:bg-slate-200 dark:hover:bg-slate-600" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
+        {{ end }}
+      </nav>
     </div>
   </div>
 </header>

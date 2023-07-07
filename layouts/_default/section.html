@@ -8,19 +8,25 @@
 {{/* 子目录下，如果_index.md和index.md都不存在，则会把子目录下的所有md作为Regular Pages来处理，但是不会有新的Section */}}
 {{ define "main" }}
 	{{ partial "printinfo.html" (dict "Html" "section.html" "Page" .) }}
-	
-	<div class="w-6/12 mx-auto mb-12 flex flex-wrap gap-6">
-	{{ $currentType := .Type }}
-	{{ range .Site.Sections }}
-		{{ if eq $currentType .Type }}
-		<a class="text-3xl font-bold theme-text" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
-		{{ else }}
-		<a class="text-3xl font-normal theme-subtext opacity-30 hover:opacity-60" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
-		{{ end }}
-	{{ end }}
-	</div>
 
-	<div class="w-6/12 mx-auto mb-12 theme-subtext">{{ .Description }}</div>
+	<div class="layout-content">
+		<div class="flex flex-wrap gap-6 mb-12">
+			{{ $currentType := .Type }}
+			{{ range .Site.Sections }}
+				{{ if eq $currentType .Type }}
+				<a class="text-3xl font-bold theme-text" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+				{{ else }}
+				<a class="text-3xl font-normal theme-subtext opacity-30 hover:opacity-60" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+				{{ end }}
+			{{ end }}
+		</div>
+
+		<div class="theme-subtext mb-12">{{ .Description }}</div>
+	
+		{{ $pag := .Paginate (.Data.Pages) }}
+		{{ partial "grid.html" $pag.Pages }}
+		{{ partial "pagination.html" . }}
+	</div>
 
 	{{/* 测试代码 Start */}}
   {{ $section := where .Site.RegularPages "Section" .Type }}
@@ -28,8 +34,4 @@
 	<div class="hidden">{{ .Data.Pages }} | .Data.Pages</div>
 	<div class="hidden">{{ .Pages }} | .Pages</div>
 	{{/* 测试代码 End */}}
-	
-	{{ $pag := .Paginate (.Data.Pages) }}
-  {{ partial "grid.html" $pag.Pages }}
-	{{ partial "pagination.html" . }}
 {{ end }}

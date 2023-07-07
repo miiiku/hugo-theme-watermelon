@@ -3,10 +3,12 @@
 
 {{ partial "printinfo.html" (dict "Html" "index.html" "Page" .) }}
 
-<div class="w-6/12 mx-auto">
-  {{ with $.Site.GetPage "index" }}
-    <h2 class="font-bold text-3xl theme-text mb-10">{{ .Title }}</h2>
-    <div class="znc theme-text">{{ .Content | safeHTML }}</div>
-  {{ end }}
+<div class="layout-wrap">
+  <div class="layout-content">
+    {{ with $.Site.GetPage "index" }}
+      <h2 class="font-bold text-3xl theme-text mb-10">{{ .Title }}</h2>
+      <div class="znc theme-text">{{ .Content | safeHTML }}</div>
+    {{ end }}
+  </div>
 </div>
 {{ end }}
