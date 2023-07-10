@@ -543,8 +543,8 @@ video {
 }
 
 .layout-wrap {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 @media (min-width: 1024px) {
@@ -565,13 +565,22 @@ video {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .layout-content {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .layout-content {
     width: 91.666667%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -741,8 +750,8 @@ video {
   margin-bottom: 3rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mt-2 {
@@ -777,6 +786,10 @@ video {
   display: none;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -795,6 +808,10 @@ video {
 
 .max-h-\[calc\(100vh-theme\(screens\.asidePadding\)\)\] {
   max-height: calc(100vh - 48px);
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-16 {
@@ -895,8 +912,16 @@ video {
   overflow: hidden;
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .break-all {
@@ -950,11 +975,6 @@ video {
   padding-right: 1rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -980,13 +1000,16 @@ video {
   padding-bottom: 1rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .pb-5 {
   padding-bottom: 1.25rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 
 .text-left {
@@ -1211,14 +1234,15 @@ video {
 
 .znc {
   line-height: 1.9;
+  word-wrap: break-word;
 }
 
 .znc > :first-child {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .znc > :last-child {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 /* markdown list start */
@@ -1226,6 +1250,7 @@ video {
 .znc :is(ol, ul) {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  padding-left: 1.75rem;
   line-height: 1.75rem;
 }
 
@@ -1242,10 +1267,6 @@ video {
 .znc :is(ol, ul) p {
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-.znc ul {
-  padding-left: 1.8em
 }
 
 .znc ul > li {
@@ -1267,10 +1288,6 @@ video {
 .znc ul > li::marker {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-.znc ol {
-  padding-left: 1.7em
 }
 
 .znc ol > li {
@@ -1401,11 +1418,11 @@ video {
   margin-bottom: 1rem;
 }
 
-.znc blockquote>:first-child {
+.znc blockquote > :first-child {
   margin-top: 0
 }
 
-.znc blockquote>:last-child {
+.znc blockquote > :last-child {
   margin-bottom: 0
 }
 
@@ -1586,8 +1603,36 @@ video {
 
 /* markdown codeblock start */
 
+.znc pre {
+  background: #1a2638;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px #000e1e26;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+.znc code {
+  padding: 4px 6px;
+  background: #215aa012;
+  font-size: 14px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.znc pre code {
+  display: block;
+  padding: 1rem;
+  background: #0000;
+  font-size: 16px;
+  color: #ffffff;
+}
+
 .znc .code-block {
   position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .znc .code-block:hover span.lang {
@@ -1681,6 +1726,49 @@ video {
 
 /* markdown codeblock end */
 
+/* iframe video start */
+
+.znc .iframe-video {
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 4px 6px -1px #000e1e26;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 0.375rem;
+}
+
+/* iframe video end */
+
+/* aplayer start */
+
+.znc .aplayer.aplayer-box {
+  box-shadow: 0 4px 6px -1px #000e1e26;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  color: var(--theme-light-text);
+}
+
+/* aplayer end */
+
+/* dplayer start */
+
+.znc .dplayer.dplayer-box {
+  box-shadow: 0 4px 6px -1px #000e1e26;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 0.375rem;
+}
+
+/* dplayer end */
+
+.znc svg {
+  height: auto;
+  max-width: 100%;
+}
+
 .znc cite, .znc em, .znc i {
   font-style: italic
 }
@@ -1750,9 +1838,14 @@ video {
   font-size: .9em
 }
 
-@media screen and (max-width: 576px) {
+.znc hr {
+  border-top: 2px solid #5c93bb2b;
+  margin: 2.5rem 0
+}
+
+@media screen and (max-width: 768px) {
   .znc h1 {
-    font-size:1.6em
+    font-size: 1.6em
   }
 
   .znc h2 {
@@ -1774,56 +1867,14 @@ video {
   .znc h6 {
     font-size: .85em
   }
-}
 
-.znc hr {
-  border-top: 2px solid #5c93bb2b;
-  margin: 2.5rem 0
-}
+  .znc :is(ol, ul) {
+    padding-left: 1.25rem;
+  }
 
-.znc code {
-  padding: .2em .4em;
-  background: #215aa012;
-  font-size: .85em;
-  border-radius: 4px;
-  vertical-align: .08em
-}
-
-.znc pre {
-  margin: 1.3rem 0;
-  background: #1a2638;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: .7em;
-  box-shadow: 0 4px 6px -1px #000e1e26;
-  word-break: normal;
-  word-wrap: normal;
-  display: flex
-}
-
-.znc pre:after {
-  content: "";
-  width: 8px;
-  flex-shrink: 0
-}
-
-.znc pre code {
-  margin: 0;
-  padding: 0;
-  background: #0000;
-  font-size: .9em;
-  color: #fff
-}
-
-.znc pre > code {
-  display: block;
-  padding: 1.1rem
-}
-
-@media screen and (max-width: 576px) {
-  .znc pre>code {
-    padding:1rem .8rem;
-    font-size: .85em
+  .znc pre code {
+    padding: 0.8rem;
+    font-size: 14px;
   }
 }
 
@@ -1847,23 +1898,78 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .md\:table-cell {
+    display: table-cell;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:gap-3 {
+    gap: 0.75rem;
   }
 }
 
 @media (min-width: 1024px) {
+  .lg\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:table-cell {
+    display: table-cell;
+  }
+
+  .lg\:h-24 {
+    height: 6rem;
+  }
+
+  .lg\:w-24 {
+    width: 6rem;
   }
 
   .lg\:w-9\/12 {
     width: 75%;
   }
+
+  .lg\:gap-4 {
+    gap: 1rem;
+  }
+
+  .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .lg\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .lg\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 @media (min-width: 1536px) {
+  .\32xl\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
   .\32xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .\32xl\:gap-6 {
+    gap: 1.5rem;
   }
 }

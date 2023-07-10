@@ -10,7 +10,7 @@
 	{{ partial "printinfo.html" (dict "Html" "section.html" "Page" .) }}
 
 	<div class="layout-content">
-		<div class="flex flex-wrap gap-6 mb-12">
+		<div class="flex flex-wrap gap-2 md:gap-3 lg:gap-4 2xl:gap-6 mb-4 md:mb-6 lg:mb-8 2xl:mb-12">
 			{{ $currentType := .Type }}
 			{{ range .Site.Sections }}
 				{{ if eq $currentType .Type }}
@@ -21,7 +21,7 @@
 			{{ end }}
 		</div>
 
-		<div class="theme-subtext mb-12">{{ .Description }}</div>
+		<div class="theme-subtext mb-4 md:mb-6 lg:mb-8 2xl:mb-12">{{ .Description }}</div>
 	
 		{{ $pag := .Paginate (.Data.Pages) }}
 		{{ partial "grid.html" $pag.Pages }}

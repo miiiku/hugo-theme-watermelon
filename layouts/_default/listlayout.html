@@ -6,7 +6,7 @@
 
 <div class="posts-container layout-content">
 	<div class="flex justify-center items-center">
-		<div class="w-24 h-24">
+		<div class="w-12 lg:w-24 h-12 lg:h-24">
 			{{ if .Params.Cover }}
 			<img class="block w-full h-full object-cover rounded-lg ring-1 ring-slate-900/5 shadow-xl" src="{{ .Params.Cover }}" alt="{{ .Title }}" loading="lazy" default-image>
 			{{ else }}
@@ -15,14 +15,14 @@
 		</div>
 	</div>
 
-	<div class="py-4 mb-8 text-center font-bold text-xl theme-text">{{ .Title }}</div>
+	<div class="py-2 lg:py-4 mb-4 lg:mb-8 break-words text-center font-bold text-xl theme-text">{{ .Title }}</div>
 
 	<div class="flex gap-6">
-		<section class="flex-shrink-0 w-full lg:w-9/12 py-6 px-8 theme-content theme-shadow rounded-xl">
+		<section class="flex-shrink-0 w-full lg:w-9/12 py-4 px-3 lg:px-8 theme-content theme-shadow rounded-xl">
       {{/* 判断是文章页还是其他页面 有Section则是文章页面 否则为其他页面(如添加的关于页面) */}}
       {{ if .Page.Section }}
       {{ with (.GetTerms "tags") }}
-			<ul class="flex gap-4 pb-5">
+			<ul class="flex gap-4 pb-4">
 				{{ range . }}
 				<li>
 					<a class="block px-3 py-1 text-xs theme-subtext theme-text-hover border theme-border theme-border-hover rounded-full" href="{{ .Permalink }}"># {{ .LinkTitle }}</a>
@@ -36,38 +36,40 @@
 			{{ $dataSource := .Params.DataSource }}
 			{{ $dataList := index .Site.Data (string $dataSource) }}
 			{{ if $dataList }}
-			<table>
-				<thead>
-					<tr class="theme-text text-left">
-						<th class="p-2">Avatar</th>
-						<th class="p-2">Name</th>
-						<th class="p-2">Description</th>
-						<th class="p-2">Link</th>
-					</tr>
-				</thead>
-				<tbody>
-					{{ range $dataList }}
-						<tr>
-							<td class="p-2">
-								{{ if .avatar }}
-								<div class="p-2 w-16 h-16 rounded-md ring-1 ring-slate-900/5 shadow-xl">
-									<img class="block w-full h-full m-0 rounded-md object-cover" default-image src="{{ .avatar | safeURL }}" alt="{{ .name }}">
-								</div>
-								{{ else }}
-								<div class="p-4 w-16 h-16 rounded-md ring-1 ring-slate-900/5 shadow-xl">
-								{{ partial "svgs/website.svg" (dict "width" "100%" "height" "100%") }}
-								</div>
-								{{ end }}
-							</td>
-							<td class="p-2 theme-text text-sm font-bold">{{ .name }}</td>
-							<td class="p-2 theme-subtext text-sm">{{ .description }}</td>
-							<td class="p-2 text-sm">
-								<a href="{{ .link | safeURL }}" target="_blank" rel="noopener">{{ .link }}</a>
-							</td>
+			<div class="w-full overflow-x-auto">
+				<table>
+					<thead>
+						<tr class="theme-text text-left">
+							<th class="p-2 hidden lg:table-cell">Avatar</th>
+							<th class="p-2">Name</th>
+							<th class="p-2 hidden md:table-cell">Description</th>
+							<th class="p-2">Link</th>
 						</tr>
-					{{ end }}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{{ range $dataList }}
+							<tr>
+								<td class="p-2 hidden lg:table-cell">
+									{{ if .avatar }}
+									<div class="p-2 w-16 h-16 rounded-md ring-1 ring-slate-900/5 shadow-xl">
+										<img class="block w-full h-full m-0 rounded-md object-cover" default-image src="{{ .avatar | safeURL }}" alt="{{ .name }}">
+									</div>
+									{{ else }}
+									<div class="p-4 w-16 h-16 rounded-md ring-1 ring-slate-900/5 shadow-xl">
+									{{ partial "svgs/website.svg" (dict "width" "100%" "height" "100%") }}
+									</div>
+									{{ end }}
+								</td>
+								<td class="p-2 theme-text text-sm font-bold">{{ .name }}</td>
+								<td class="p-2 hidden md:table-cell theme-subtext text-sm">{{ .description }}</td>
+								<td class="p-2 text-sm">
+									<a href="{{ .link | safeURL }}" target="_blank" rel="noopener">{{ .link }}</a>
+								</td>
+							</tr>
+						{{ end }}
+					</tbody>
+				</table>
+			</div>
 			{{ end }}
 		</section>
 		<aside class="hidden lg:flex flex-auto flex-col gap-6 sticky top-6 max-h-[calc(100vh-theme(screens.asidePadding))]">

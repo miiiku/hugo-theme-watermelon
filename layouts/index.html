@@ -5,10 +5,12 @@
 
 <div class="layout-wrap">
   <div class="layout-content">
+    <div class="py-3 lg:py-6 px-3 lg:px-8">
     {{ with $.Site.GetPage "index" }}
       <h2 class="font-bold text-3xl theme-text mb-10">{{ .Title }}</h2>
       <div class="znc theme-text">{{ .Content | safeHTML }}</div>
     {{ end }}
+    </div>
   </div>
 </div>
 {{ end }}

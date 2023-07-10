@@ -1,19 +1,20 @@
 .znc {
   line-height: 1.9;
+  word-wrap: break-word;
 }
 
 .znc > :first-child {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .znc > :last-child {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 /* markdown list start */
 
 .znc :is(ol, ul) {
-  @apply my-6 leading-7;
+  @apply my-6 leading-7 pl-7;
 }
 
 .znc :is(ol, ul) > li {
@@ -28,20 +29,12 @@
   @apply my-0;
 }
 
-.znc ul {
-  padding-left: 1.8em
-}
-
 .znc ul > li {
   list-style: disc
 }
 
 .znc ul > li::marker {
   @apply text-base theme-text;
-}
-
-.znc ol {
-  padding-left: 1.7em
 }
 
 .znc ol > li {
@@ -123,11 +116,11 @@
   @apply my-4;
 }
 
-.znc blockquote>:first-child {
+.znc blockquote > :first-child {
   margin-top: 0
 }
 
-.znc blockquote>:last-child {
+.znc blockquote > :last-child {
   margin-bottom: 0
 }
 
@@ -203,8 +196,34 @@
 
 /* markdown codeblock start */
 
+.znc pre {
+  background: #1a2638;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px #000e1e26;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+.znc code {
+  padding: 4px 6px;
+  background: #215aa012;
+  font-size: 14px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.znc pre code {
+  display: block;
+  padding: 1rem;
+  background: #0000;
+  font-size: 16px;
+  color: #ffffff;
+}
+
 .znc .code-block {
-  position: relative;
+  @apply relative my-4;
 }
 
 .znc .code-block:hover span.lang {
@@ -282,6 +301,42 @@
 
 /* markdown codeblock end */
 
+/* iframe video start */
+
+.znc .iframe-video {
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 4px 6px -1px #000e1e26;
+  @apply w-full my-4 rounded-md;
+}
+
+/* iframe video end */
+
+/* aplayer start */
+
+.znc .aplayer.aplayer-box {
+  box-shadow: 0 4px 6px -1px #000e1e26;
+  @apply
+    w-full
+    my-4
+    rounded-md
+    text-[var(--theme-light-text)];
+}
+
+/* aplayer end */
+
+/* dplayer start */
+
+.znc .dplayer.dplayer-box {
+  box-shadow: 0 4px 6px -1px #000e1e26;
+  @apply w-full my-4 rounded-md;
+}
+
+/* dplayer end */
+
+.znc svg {
+  @apply max-w-full h-auto;
+}
+
 .znc cite, .znc em, .znc i {
   font-style: italic
 }
@@ -340,9 +395,14 @@
   font-size: .9em
 }
 
-@media screen and (max-width: 576px) {
+.znc hr {
+  border-top: 2px solid #5c93bb2b;
+  margin: 2.5rem 0
+}
+
+@media screen and (max-width: 768px) {
   .znc h1 {
-    font-size:1.6em
+    font-size: 1.6em
   }
 
   .znc h2 {
@@ -364,55 +424,13 @@
   .znc h6 {
     font-size: .85em
   }
-}
 
-.znc hr {
-  border-top: 2px solid #5c93bb2b;
-  margin: 2.5rem 0
-}
+  .znc :is(ol, ul) {
+    @apply pl-5;
+  }
 
-.znc code {
-  padding: .2em .4em;
-  background: #215aa012;
-  font-size: .85em;
-  border-radius: 4px;
-  vertical-align: .08em
-}
-
-.znc pre {
-  margin: 1.3rem 0;
-  background: #1a2638;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: .7em;
-  box-shadow: 0 4px 6px -1px #000e1e26;
-  word-break: normal;
-  word-wrap: normal;
-  display: flex
-}
-
-.znc pre:after {
-  content: "";
-  width: 8px;
-  flex-shrink: 0
-}
-
-.znc pre code {
-  margin: 0;
-  padding: 0;
-  background: #0000;
-  font-size: .9em;
-  color: #fff
-}
-
-.znc pre > code {
-  display: block;
-  padding: 1.1rem
-}
-
-@media screen and (max-width: 576px) {
-  .znc pre>code {
-      padding:1rem .8rem;
-      font-size: .85em
+  .znc pre code {
+    padding: 0.8rem;
+    font-size: 14px;
   }
 }
