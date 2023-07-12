@@ -35,12 +35,6 @@ enableEmoji = true
 [menu]
   # 顶部导航栏
   [[menu.main]]
-    identifier = "/"
-    name = "首页"
-    title = "HOME"
-    url = "/"
-    weight = 1
-  [[menu.main]]
     identifier = "/posts"
     name = "帖子"
     title = "POSTS"
@@ -89,7 +83,8 @@ enableEmoji = true
 [params]
   keywords = ["antler", "个人博客", "不见鹿", "鹿角"]
   description = "喜欢下雨闻到的泥土味，喜欢下雨带来的丝丝凉意，喜欢窝在被窝听着窗外啪嗒啪嗒的声音，喜欢被雨冲刷以后的这个世界"
-  mainSections = ["posts"]
+  mainSections = ["docs"]
+  showAllPagesInArchive = true
 
   # 国内备案号
   beian = "蜀ICP备15014309号"

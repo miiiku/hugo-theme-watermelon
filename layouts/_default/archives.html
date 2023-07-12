@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+{{ partial "printinfo.html" (dict "Html" "archives.html" "Page" .) }}
+
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+
+{{ if site.Params.ShowAllPagesInArchive }}
+{{ $pages = where site.RegularPages "Type" "not in" "page" }}
+{{ end }}
+
+<div class="layout-wrap">
+  <div class="layout-content">
+    <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8">
+      {{ range $pages.GroupByPublishDate "2006" }}
+      <section>
+        <h2 class="text-2xl font-bold">
+          <span>{{ .Key }}</span>
+          <sup>{{ len .Pages }}</sup>
+        </h2>
+        {{ range .Pages.GroupByDate "January" }}
+        <dl class="mt-4">
+          <dt class="font-bold text-sm theme-subtext">{{ .Key }}</dt>
+          {{ range where .Pages "Draft" "ne" true }}
+          <dd>
+            <article class="text-base mt-4 break-words">
+              {{ if site.Params.ShowAllPagesInArchive }}
+              <span class="theme-subtext text-xs">[{{ range where site.Sections "Type" "in" .Type}}{{ .Title }}{{end}}]</span>
+              {{ end }}
+              <a aria-label="{{ .Title | plainify }}" href="{{ .Permalink }}">{{ .Title }}</a>
+            </article>
+          </dd>
+          {{ end }}
+        </dl>
+        {{ end }}
+      </section>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ end }}

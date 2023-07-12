@@ -5,7 +5,7 @@ date: 2019-03-05 14:12:17
 notoc: true
 cover: https://qiniu.sukoshi.xyz/src/images/banner-3.jpg-compress
 tags: ["html", "markdown"]
-layout: listlayout
+layout: datalist
 dataSource: "link"
 ---
 
