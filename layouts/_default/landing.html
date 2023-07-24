@@ -1,0 +1,19 @@
+{{/* landing - 自定义layout */}}
+{{ define "main" }}
+
+{{ partial "printinfo.html" (dict "Html" "landing.html" "Page" .) }}
+
+<div class="layout-wrap">
+  <div class="layout-content">
+    <div class="md:gap-3 lg:gap-4 2xl:gap-6 mb-2 md:mb-4 lg:mb-6">
+      <a class="text-3xl font-bold theme-text" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+    </div>
+
+    <div class="theme-subtext mb-4 md:mb-6 lg:mb-8 2xl:mb-12">{{ .Params.Description }}</div>
+    
+    <article class="py-4 px-3 lg:px-8 theme-content theme-shadow rounded-xl">
+      <div class="znc theme-text">{{ .Content }}</div>
+    </article>
+  </div>
+</div>
+{{ end }}

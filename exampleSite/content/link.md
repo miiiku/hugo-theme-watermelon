@@ -1,12 +1,11 @@
 ---
 title: ともだち
-description: 嘿，靓仔
+description: 可爱又迷人的小伙伴们
 date: 2019-03-05 14:12:17
+layout: landing
 notoc: true
 cover: https://qiniu.sukoshi.xyz/src/images/banner-3.jpg-compress
 tags: ["html", "markdown"]
-layout: datalist
-dataSource: "link"
 ---
 
 **可爱又迷人的小伙伴们**

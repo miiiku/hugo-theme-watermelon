@@ -9,23 +9,25 @@
 {{ define "main" }}
 	{{ partial "printinfo.html" (dict "Html" "section.html" "Page" .) }}
 
-	<div class="layout-content">
-		<div class="flex flex-wrap gap-2 md:gap-3 lg:gap-4 2xl:gap-6 mb-4 md:mb-6 lg:mb-8 2xl:mb-12">
-			{{ $currentType := .Type }}
-			{{ range .Site.Sections }}
-				{{ if eq $currentType .Type }}
-				<a class="text-3xl font-bold theme-text" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
-				{{ else }}
-				<a class="text-3xl font-normal theme-subtext opacity-30 hover:opacity-60" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+	<div class="layout-wrap">
+		<div class="layout-content">
+			<div class="flex flex-wrap gap-2 md:gap-3 lg:gap-4 2xl:gap-6 mb-2 md:mb-4 lg:mb-6">
+				{{ $currentType := .Type }}
+				{{ range .Site.Sections }}
+					{{ if eq $currentType .Type }}
+					<a class="text-3xl font-bold theme-text" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+					{{ else }}
+					<a class="text-3xl font-normal theme-subtext opacity-30 hover:opacity-60" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+					{{ end }}
 				{{ end }}
-			{{ end }}
-		</div>
+			</div>
 
-		<div class="theme-subtext mb-4 md:mb-6 lg:mb-8 2xl:mb-12">{{ .Description }}</div>
-	
-		{{ $pag := .Paginate (.Data.Pages) }}
-		{{ partial "grid.html" $pag.Pages }}
-		{{ partial "pagination.html" . }}
+			<div class="theme-subtext mb-4 md:mb-6 lg:mb-8 2xl:mb-12">{{ .Description }}</div>
+
+			{{ $pag := .Paginate (.Data.Pages) }}
+			{{ partial "grid.html" $pag.Pages }}
+			{{ partial "pagination.html" . }}
+		</div>
 	</div>
 
 	{{/* 测试代码 Start */}}

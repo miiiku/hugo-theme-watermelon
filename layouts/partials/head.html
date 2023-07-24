@@ -33,8 +33,9 @@
   {{ $title = printf "%s - %s" . $title }}
   {{ end }}
   <title>{{- $title -}}</title>
-
+  {{ if not .Params.series }} 
   {{ template "_internal/opengraph.html" . }}
+  {{ end }}
   {{ template "_internal/twitter_cards.html" . }}
 
   {{/* style */}}

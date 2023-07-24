@@ -5,12 +5,15 @@
 
 <div class="layout-wrap">
   <div class="layout-content">
-    <div class="py-3 lg:py-6 px-3 lg:px-8">
-    {{ with $.Site.GetPage "index" }}
-      <h2 class="font-bold text-3xl theme-text mb-10">{{ .Title }}</h2>
-      <div class="znc theme-text">{{ .Content | safeHTML }}</div>
-    {{ end }}
-    </div>
+		<div class="md:gap-3 lg:gap-4 2xl:gap-6 mb-2 md:mb-4 lg:mb-6">
+      <a class="text-3xl font-bold theme-text" href="{{ .Permalink | safeURL }}">{{ .Site.Title }}</a>
+		</div>
+
+		<div class="theme-subtext mb-4 md:mb-6 lg:mb-8 2xl:mb-12">{{ .Site.Params.Description }}</div>
+
+    {{ $pages := where .Site.RegularPages "Type" "not in" "page" }}
+    {{ $pag := .Paginate ($pages) }}
+    {{ partial "grid.html" $pag.Pages }}
   </div>
 </div>
 {{ end }}

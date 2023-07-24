@@ -4,7 +4,6 @@ date: 2023-07-10T17:38:09+08:00
 categories: 
 tags: ["html", "table", "ul", "ol", "li"]
 draft: false
-cover: "../images/1.jpeg"
 ---
 
 > 内容文案均在网上瞎复制的，与内容无关。

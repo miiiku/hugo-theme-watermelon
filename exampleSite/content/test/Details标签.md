@@ -4,7 +4,6 @@ date: 2023-06-20T18:30:55+08:00
 notoc: true
 categories: 
 tags: ["html", "details", "markdown"]
-cover: "../images/1.jpeg"
 aplayer: true
 layout: datalist
 dataSource: "project"

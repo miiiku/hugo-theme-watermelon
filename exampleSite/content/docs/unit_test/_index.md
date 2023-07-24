@@ -1,5 +1,4 @@
 +++
-title = "二级主题文档_index.md"
-cover = "https://qiniu.sukoshi.xyz/src/images/cover/cover-20.jpg?x-oss-process=style/webp"
-description = "单元测试"
+title = "这是一个二级目录"
+description = "主题文档二级目录"
 +++
