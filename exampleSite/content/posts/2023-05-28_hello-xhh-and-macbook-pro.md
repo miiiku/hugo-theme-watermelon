@@ -4,7 +4,7 @@ date: 2023-06-15T13:29:55+08:00
 categories: ['QAQ']
 tags: ['theme', 'hugo']
 draft: false
-cover: 
+cover: /7.JPG
 ---
 
 # はじめに

@@ -1,7 +1,8 @@
 :root {
   --themes-shadow: rgb(226 232 240 / 0.05);
 
-  --theme-light-bg: #f8fafc;
+  /* --theme-light-bg: #f8fafc; */
+  --theme-light-bg: #efeeee;
   --theme-light-content: #ffffff;
   --theme-light-text: #0f172a;
   --theme-light-subtext: #64748b;

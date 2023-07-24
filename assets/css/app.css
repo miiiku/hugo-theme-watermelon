@@ -1,6 +1,7 @@
 :root {
   --themes-shadow: rgb(226 232 240 / 0.05);
-  --theme-light-bg: #f8fafc;
+  /* --theme-light-bg: #f8fafc; */
+  --theme-light-bg: #efeeee;
   --theme-light-content: #ffffff;
   --theme-light-text: #0f172a;
   --theme-light-subtext: #64748b;
@@ -18,9 +19,7 @@
   --theme-dark-border-hover: #bae6fd;
 }
 
-/*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
-*/
+/* ! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -671,43 +670,12 @@ video {
   --tw-ring-color: rgb(226 232 240 / 0.05);
 }
 
-.theme-border {
-  border-color: var(--theme-light-border);
-}
-
-:is(.dark .theme-border) {
-  border-color: var(--theme-dark-border);
-}
-
-.theme-border-hover {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-
-.theme-border-hover:hover {
-  border-color: var(--theme-light-border-hover);
-}
-
-:is(.dark .theme-border-hover:hover) {
-  border-color: var(--theme-dark-border-hover);
-}
-
 .absolute {
   position: absolute;
 }
 
 .relative {
   position: relative;
-}
-
-.sticky {
-  position: sticky;
-}
-
-.top-6 {
-  top: 1.5rem;
 }
 
 .m-0 {
@@ -790,10 +758,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.max-h-\[calc\(100vh-theme\(screens\.asidePadding\)\)\] {
-  max-height: calc(100vh - 48px);
 }
 
 .w-12 {
@@ -880,10 +844,6 @@ video {
   gap: 1rem;
 }
 
-.gap-6 {
-  gap: 1.5rem;
-}
-
 .gap-8 {
   gap: 2rem;
 }
@@ -910,10 +870,6 @@ video {
   word-break: break-all;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -928,6 +884,10 @@ video {
 
 .border {
   border-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
 }
 
 .border-\[\#5c93bb2b\] {
@@ -986,8 +946,13 @@ video {
   padding-bottom: 1rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .text-left {
@@ -1064,15 +1029,15 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1931,24 +1896,16 @@ video {
     margin-bottom: 2rem;
   }
 
-  .lg\:flex {
-    display: flex;
-  }
-
   .lg\:table-cell {
     display: table-cell;
   }
 
-  .lg\:h-24 {
-    height: 6rem;
+  .lg\:h-32 {
+    height: 8rem;
   }
 
-  .lg\:w-24 {
-    width: 6rem;
-  }
-
-  .lg\:w-9\/12 {
-    width: 75%;
+  .lg\:w-32 {
+    width: 8rem;
   }
 
   .lg\:gap-4 {
