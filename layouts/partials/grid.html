@@ -1,11 +1,11 @@
-<div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
   {{ range . }}
   <article class="flex gap-4">
-    <a class="theme-content rounded-lg ring-1 ring-slate-900/5 shadow-xl shrink-0 flex items-center justify-center w-24 h-24 text-5xl overflow-hidden" href="{{ .Permalink | safeURL }}">
+    <a class="theme-content p-3 rounded-lg ring-1 ring-slate-900/5 shadow-lg shrink-0 flex items-center justify-center w-28 h-28 text-5xl overflow-hidden" href="{{ .Permalink | safeURL }}">
       {{ if eq .Kind "section" }}
       {{ partial "svgs/folder.svg" (dict "width" "54px" "height" "54px") }}
       {{ else if .Params.Cover }}
-      <img class="block w-full h-full object-cover" src="{{ .Params.Cover }}" alt="{{ .Title }}" loading="lazy" default-image>
+      <img class="block rounded-lg w-full h-full object-cover" src="{{ .Params.Cover }}" alt="{{ .Title }}" loading="lazy" default-image>
       {{ else }}
       {{ partial "svgs/book.svg" (dict "width" "54px" "height" "54px") }}
       {{ end }}

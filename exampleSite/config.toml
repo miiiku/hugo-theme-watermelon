@@ -41,6 +41,12 @@ enableEmoji = true
     url = "/posts"
     weight = 2
   [[menu.main]]
+    identifier = "/test"
+    name = "测试"
+    title = "TEST"
+    url = "/test"
+    weight = 3
+  [[menu.main]]
     identifier = "/link"
     name = "友链"
     title = "LINK"
@@ -55,7 +61,7 @@ enableEmoji = true
 # 主题相关配置项
 [params]
   keywords = ["antler", "个人博客", "不见鹿", "鹿角"]
-  description = "喜欢下雨闻到的泥土味，喜欢下雨带来的丝丝凉意，喜欢窝在被窝听着窗外啪嗒啪嗒的声音，喜欢被雨冲刷以后的这个世界"
+  description = "醉后不知天在水，满船清梦压醒河"
   mainSections = ["docs"]
   showAllPagesInArchive = true
 

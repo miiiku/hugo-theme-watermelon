@@ -4,10 +4,10 @@
 
 @layer components {
   .layout-wrap {
-    @apply py-4 lg:py-10 2xl:py-12;
+    @apply px-2 md:px-3 lg:px-4 py-4 lg:py-8;
   }
   .layout-content {
-    @apply w-full lg:w-11/12 xl:w-10/12 2xl:w-8/12 px-2 md:px-3 lg:px-4 mx-auto;
+    @apply w-full xl:w-[1024px] 2xl:w-[1200px] mx-auto;
   }
   .trans-colors {
     @apply transition-colors duration-300 ease-in;
