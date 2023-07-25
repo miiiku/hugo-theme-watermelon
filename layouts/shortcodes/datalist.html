@@ -5,16 +5,16 @@
 <table class="datalist-table">
   <thead>
     <tr class="theme-text text-left">
-      <th class="p-2 hidden lg:table-cell">Avatar</th>
+      <th class="pr-2 hidden lg:table-cell">Avatar</th>
       <th class="p-2">Name</th>
       <th class="p-2 hidden md:table-cell">Description</th>
-      <th class="p-2">Link</th>
+      <th class="pl-2">Link</th>
     </tr>
   </thead>
   <tbody>
     {{ range $dataList }}
       <tr>
-        <td class="p-2 hidden lg:table-cell">
+        <td class="pr-2 hidden lg:table-cell">
           {{ if .avatar }}
           <div class="p-2 w-16 h-16 rounded-md ring-1 ring-slate-900/5 shadow-xl">
             <img class="block w-full h-full m-0 rounded-md object-cover" default-image src="{{ .avatar | safeURL }}" alt="{{ .name }}">
@@ -27,7 +27,7 @@
         </td>
         <td class="p-2 theme-text text-sm font-bold">{{ .name }}</td>
         <td class="p-2 hidden md:table-cell theme-subtext text-sm">{{ .description }}</td>
-        <td class="p-2 text-sm">
+        <td class="pl-2 text-sm">
           <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">{{ .link }}</a>
         </td>
       </tr>

@@ -10,11 +10,11 @@
       {{ partial "svgs/book.svg" (dict "width" "54px" "height" "54px") }}
       {{ end }}
     </a>
-    <div class="flex-auto py-2">
+    <div class="flex flex-col justify-between flex-auto py-2">
       <a class="theme-text text-xl font-bold break-all tracking-tight" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
-      <div class="theme-subtext mt-2 text-sm">{{- .Date.Format "January 2, 2006" -}}</div>
+      <div class="theme-subtext text-sm">{{- .Date.Format "January 2, 2006" -}}</div>
       {{ if eq .Kind "section" }}
-      <div class="theme-subtext mt-2 text-sm">目录下共有 {{- len .Pages -}} 个帖子</div>
+      <div class="theme-subtext text-sm">目录下共有 {{- len .Pages -}} 个帖子</div>
       {{ end }}
     </div>
   </article>

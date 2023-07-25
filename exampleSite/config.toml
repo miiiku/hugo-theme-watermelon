@@ -35,25 +35,25 @@ enableEmoji = true
 [menu]
   # 顶部导航栏
   [[menu.main]]
-    identifier = "/posts"
+    identifier = "posts"
     name = "帖子"
     title = "POSTS"
     url = "/posts"
     weight = 2
   [[menu.main]]
-    identifier = "/test"
+    identifier = "test"
     name = "测试"
     title = "TEST"
     url = "/test"
     weight = 3
   [[menu.main]]
-    identifier = "/link"
+    identifier = "link"
     name = "友链"
     title = "LINK"
     url = "/link"
     weight = 4
   [[menu.main]]
-    identifier = "/project"
+    identifier = "project"
     name = "项目"
     url = "/project"
     weight = 5
@@ -62,7 +62,7 @@ enableEmoji = true
 [params]
   keywords = ["antler", "个人博客", "不见鹿", "鹿角"]
   description = "醉后不知天在水，满船清梦压醒河"
-  mainSections = ["docs"]
+  mainSections = ["posts"]
   showAllPagesInArchive = true
 
   # 国内备案号

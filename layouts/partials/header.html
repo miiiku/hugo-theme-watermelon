@@ -6,9 +6,27 @@
       <p class="theme-subtext mt-8">{{ . }}</p>
       {{ end }}
     </div>
+
     <nav class="flex flex-wrap gap-2 md:gap-3 lg:gap-4 2xl:gap-6 mb-2 md:mb-4 lg:mb-6">
+      {{ $condition1 := "" }}
+      
+      {{/* Home */}}
+      {{ if .IsHome }}
+      {{ $condition1 = index .Site.MainSections 0 }}
+      {{ end }}
+
+      {{/* Section */}}
+      {{ if .IsSection }}
+      {{ $condition1 = .Section }}
+      {{ end }}
+
+      {{ if .IsPage }}
+      {{ $condition1 = replace .RelPermalink "/" "" }}
+      {{ end }}
+
+
       {{ range .Site.Menus.main }}
-        {{ if eq .URL "/posts" }}
+        {{ if eq .Identifier $condition1 }}
         <a class="text-3xl font-bold theme-text" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
         {{ else }}
         <a class="text-3xl font-normal theme-subtext opacity-30 hover:opacity-60" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
