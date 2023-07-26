@@ -33,3 +33,5 @@ tags: ["html", "markdown"]
 站点图标 | https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&r=g&d=retro
 
 **添加友链我不希望只是挂在那里，而是偶尔闲下来的时候多了一个~~摸鱼~~访问生活趣事的目的地 :)**
+
+{{< datalist data="link" >}}

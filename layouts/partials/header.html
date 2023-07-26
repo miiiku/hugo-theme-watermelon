@@ -1,5 +1,5 @@
 <header id="header-container" class="layout-wrap">
-  <div class="layout-content">
+  <div class="layout-content py-6">
     <div class="mb-8">
       <a class="text-4xl font-bold theme-text" href="{{ .Site.BaseURL | safeURL }}">{{ .Site.Title }}</a>
       {{ with .Site.Params.Description }}
@@ -7,12 +7,12 @@
       {{ end }}
     </div>
 
-    <nav class="flex flex-wrap gap-2 md:gap-3 lg:gap-4 2xl:gap-6 mb-2 md:mb-4 lg:mb-6">
+    <nav class="flex flex-wrap gap-2 md:gap-3 lg:gap-4 2xl:gap-6">
       {{ $condition1 := "" }}
       
       {{/* Home */}}
       {{ if .IsHome }}
-      {{ $condition1 = index .Site.MainSections 0 }}
+      {{ $condition1 = "/" }}
       {{ end }}
 
       {{/* Section */}}

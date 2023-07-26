@@ -82,7 +82,7 @@
   display: inline-block;
   max-width: 100%;
   height: auto;
-  @apply rounded-md my-4;
+  @apply rounded-md;
 }
 
 .znc :is(figure.figure-image) {
