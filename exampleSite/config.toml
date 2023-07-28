@@ -35,28 +35,40 @@ enableEmoji = true
 [menu]
   # 顶部导航栏
   [[menu.main]]
+    identifier = "/"
+    name = "首页"
+    title = "HOME"
+    url = "/"
+    weight = 1
+  [[menu.main]]
     identifier = "posts"
     name = "帖子"
     title = "POSTS"
     url = "/posts"
     weight = 2
   [[menu.main]]
+    identifier = "docs"
+    name = "文档"
+    title = "DOCS"
+    url = "/docs"
+    weight = 3
+  [[menu.main]]
     identifier = "test"
     name = "测试"
     title = "TEST"
     url = "/test"
-    weight = 3
+    weight = 4
   [[menu.main]]
     identifier = "link"
     name = "友链"
     title = "LINK"
     url = "/link"
-    weight = 4
+    weight = 5
   [[menu.main]]
     identifier = "project"
     name = "项目"
     url = "/project"
-    weight = 5
+    weight = 6
 
 # 主题相关配置项
 [params]

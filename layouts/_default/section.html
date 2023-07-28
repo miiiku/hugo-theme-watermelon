@@ -9,11 +9,13 @@
 {{ define "main" }}
 	{{ partial "printinfo.html" (dict "Html" "section.html" "Page" .) }}
 
-	<div class="layout-wrap">
-		<div class="layout-content">
-			{{ $pag := .Paginate (.Data.Pages) }}
-			{{ partial "grid.html" $pag.Pages }}
-			{{ partial "pagination.html" . }}
+	<div class="py-5">
+		<div class="layout-wrap">
+			<div class="layout-content">
+				{{ $pag := .Paginate (.Data.Pages) }}
+				{{ partial "grid.html" $pag.Pages }}
+				{{ partial "pagination.html" . }}
+			</div>
 		</div>
 	</div>
 
