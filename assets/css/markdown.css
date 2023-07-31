@@ -80,9 +80,8 @@
 
 .znc img:not(.figure-image--img), .znc > img {
   display: inline-block;
-  max-width: 100%;
   height: auto;
-  @apply rounded-md;
+  @apply max-w-full max-h-full rounded-md;
 }
 
 .znc :is(figure.figure-image) {

@@ -1,9 +1,6 @@
 ---
 title: "config.toml配置"
 date: 2021-06-09T11:32:04+08:00
-categories: ['doc']
-tags: ['config']
-description: "config.toml在kagome中的配置项"
 ---
 
 config配置文件中配置可参考Hugo官方文档: [Configure Hugo](https://gohugo.io/getting-started/configuration/)
@@ -15,38 +12,23 @@ config配置文件中配置可参考Hugo官方文档: [Configure Hugo](https://g
 
 ## 导航栏
 
-导航栏的定义放在`menu`中，目前支持`menu.main`和`menu.social`两种。
+导航栏的定义放在`menu`中，目前支持`menu.main`。
 
-`menu.main`是页面顶部的主要导航栏，而`menu.social`则是页面底部的常用社交地址。
 
 Menu的相关属性可以查看Hugo官方文档:[menus](https://gohugo.io/variables/menus/)
 
-在`menu.social`中，目前只添加了`[github, twitter, instagram, weibo, zhihu]`这几个社交地址的Icon，采用的是svg，如果你要添加更多的社交地址，主要在`<theme>/layouts/partials/footer.html`自定义更多的社交图标。
-
-添加一个`GITHUB`社交地址:
-
-```toml
-[menu]
-  [[menu.social]]
-    # 唯一标识符
-    identifier = "github"
-    # 名称
-    name = "github"
-    # url地址
-    url = "https://github.com/miiiku"
-    # 权重 越小越靠前
-    weight = 1
-```
 
 ## 基本配置项:
 
+在`config.toml`下的`[params]`中，可以添加如下自定义字段：
+
 | key          	| type   	| describe                       	| example           	|
 |--------------	|--------	|--------------------------------	|-------------------	|
-| keywords     	| array  	| 站点关键词                     	| ["hugo", "theme"] 	|
-| description  	| string 	| 站点描述                       	| 一个新的站点      	|
-| mainSections 	| array  	| 主要内容sections               	| ["posts"]         	|
-| beian        	| string 	| 备案信息                       	| xxxxxx            	|
-| toc_show_len 	| number 	| 指定内容长度以后出现目录widget 	| 200               	|
+| keywords     	| array  	| 站点关键词                     	| ["hugo", "theme"]    |
+| description  	| string 	| 站点描述                       	| 一个新的站点          |
+| mainSections 	| array  	| 主要内容sections               	| 默认值["posts"]       |
+| beian        	| string 	| 备案信息                       	| xxxxxx            	 |
+| showAllPagesInArchive | boolean | 在归档页面`/archives`中是否展示所有section（分类）下的文章，如果为`false`则只展示`mainSections`下的所有文章 | true |
 
 **其中如果没有配置`mainSections`，那么则会默认获取`posts`下的文章，所以如果没有配置`mainSections`请确保在`content/posts`下有内容**
 
@@ -60,33 +42,6 @@ analytics相关的配置项在`[params]`下的`[params.analytics]`中:
 [params.analytics]
   baidu = ""
 ```
-
-## widget
-
-widget小部件相关配置项在`[params]`下的`[params.widget]`中:
-
-其中`author`小部件数据来源与`config.toml`下的`author`，它需要`name`，`description`，`avatar`这三个字段，如:
-
-```toml
-[author]
-  name = "Sukoshi"
-  email = "guanquanhong@163.com"
-  description = "梅花鹿的角叫鹿角"
-  avatar = "https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&r=g&d=retro"
-```
-
-其中`articles`小部件内容是根据当前文章`Front Matter`中的`categories`来查找最新的文章。
-
-如果当前文章没有`categories`或者没有相关文章，则会去查找`tags`的相关文章。
-
-如果也没有相关数据最终会去找当前文章`sections`下的最新文章。
-
-| key              	| type   	| default 	| describe             	|
-|------------------	|--------	|---------	|----------------------	|
-| articles_count   	| number 	| 6       	| 相关文章widget条目数 	|
-| categories_count 	| number 	| 6       	| 分类widget条目数     	|
-| tags_count       	| number 	| 12      	| 标签widget条目数     	|
-
 
 ## aplayer 音乐播放器
 
