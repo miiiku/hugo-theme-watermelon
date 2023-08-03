@@ -5,9 +5,9 @@ date: 2021-06-09T11:32:04+08:00
 
 config配置文件中配置可参考Hugo官方文档: [Configure Hugo](https://gohugo.io/getting-started/configuration/)
 
-这里主要补充`kagome`中所需要的一些配置项:
+这里主要补充`hugo-theme-watermelon`中所需要的一些配置项:
 
-`kagome`所需的配置项都在`config.toml`中的`[params]`中。
+`hugo-theme-watermelon`所需的配置项都在`config.toml`中的`[params]`中。
 
 
 ## 导航栏
