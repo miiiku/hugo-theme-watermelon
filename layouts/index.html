@@ -3,13 +3,12 @@
 
 {{ partial "printinfo.html" (dict "Html" "index.html" "Page" .) }}
 
-<div class="py-5">
-  <div class="layout-wrap">
-    <div class="layout-content">
-      {{ $pages := where .Site.RegularPages "Type" "not in" "page" }}
-      {{ $pag := .Paginate ($pages) }}
-      {{ partial "grid.html" $pag.Pages }}
-    </div>
+<div class="layout-wrap">
+  <div class="layout-content">
+    {{ $pages := where .Site.RegularPages "Type" "not in" "page" }}
+    {{ $pag := .Paginate ($pages) }}
+    {{ partial "grid.html" $pag.Pages }}
   </div>
 </div>
+
 {{ end }}

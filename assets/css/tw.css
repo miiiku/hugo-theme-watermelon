@@ -4,7 +4,7 @@
 
 @layer components {
   .layout-wrap {
-    @apply px-2 md:px-3 lg:px-4;
+    @apply px-3 md:px-4 lg:px-5;
   }
   .layout-content {
     @apply w-full xl:w-[1024px] 2xl:w-[1200px] mx-auto;

@@ -1,13 +1,15 @@
 <header id="header-container" class="layout-wrap">
-  <div class="layout-content py-6">
-    <div class="mb-8">
-      <a class="text-4xl font-bold theme-text" href="{{ .Site.BaseURL | safeURL }}">{{ .Site.Title }}</a>
+  <div class="layout-content">
+    <div class="mb-6 lg:mb-8">
+      <div class="pt-6 lg:pt-12">
+        <a class="text-4xl font-bold theme-text" href="{{ .Site.BaseURL | safeURL }}">{{ .Site.Title }}</a>
+      </div>
       {{ with .Site.Params.Description }}
-      <p class="theme-subtext mt-8">{{ . }}</p>
+      <p class="pt-4 lg:p4-8 theme-subtext">{{ . }}</p>
       {{ end }}
     </div>
 
-    <nav class="flex flex-wrap gap-2 md:gap-3 lg:gap-4 2xl:gap-6">
+    <nav class="flex flex-wrap gap-4 md:gap-6 lg:gap-8">
       {{ $condition1 := "" }}
       
       {{/* Home */}}
