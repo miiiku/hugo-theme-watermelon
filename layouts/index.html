@@ -8,6 +8,7 @@
     {{ $pages := where .Site.RegularPages "Type" "not in" "page" }}
     {{ $pag := .Paginate ($pages) }}
     {{ partial "grid.html" $pag.Pages }}
+    {{ partial "pagination.html" . }}
   </div>
 </div>
 
